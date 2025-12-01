@@ -71,6 +71,47 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        .gameButton {
+            position: absolute;
+            background: rgba(0, 200, 200, 0.2);
+            border: 2px solid #00cccc;
+            color: #00cccc;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+            z-index: 100;
+            user-select: none;
+        }
+        
+        .gameButton:hover {
+            background: rgba(0, 200, 200, 0.4);
+            box-shadow: 0 0 10px rgba(0, 200, 200, 0.5);
+        }
+        
+        .gameButton:active {
+            transform: scale(0.95);
+        }
+        
+        #restartButton {
+            top: 10px;
+            left: 10px;
+        }
+        
+        #nextLevelButton {
+            top: 10px;
+            left: 150px;
+            display: none;
+        }
+        
+        #enhancedButton {
+            top: 10px;
+            left: 290px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -80,6 +121,9 @@
             <div id="loadingText">Загрузка игры...</div>
         </div>
         <canvas id="gameCanvas" width="1200" height="700"></canvas>
+        <button id="restartButton" class="gameButton">🔄 Перезапуск (R)</button>
+        <button id="nextLevelButton" class="gameButton">➡️ Следующий (N)</button>
+        <button id="enhancedButton" class="gameButton">⚡ Усиленные (E)</button>
     </div>
     
     <script src="js/levels.js"></script>
